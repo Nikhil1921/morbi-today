@@ -23,22 +23,22 @@
 		<?= link_tag('assets/front/css/owl.carousel.css','stylesheet','text/css') ?>
 		<?= link_tag('assets/front/css/owl.theme.css','stylesheet','text/css') ?>
 		<?= link_tag('assets/front/css/ticker-style.css','stylesheet','text/css') ?>
-		<?= link_tag('assets/front/css/style.css?v=1.0.5','stylesheet','text/css') ?>
+		<?= link_tag('assets/front/css/style.css?v=1.0.7','stylesheet','text/css') ?>
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 		<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 		<style>
 			@media print {
-			html, body {
-			display: none;  /* hide whole page */
-			}
+				html, body {
+					display: none;  /* hide whole page */
+				}
 			}
 			html {
-			-webkit-user-select: none;
-			-khtml-user-select: none;
-			-moz-user-select: none;
-			-ms-user-select: none;
-			-o-user-select: none;
-			user-select: none;
+				-webkit-user-select: none;
+				-khtml-user-select: none;
+				-moz-user-select: none;
+				-ms-user-select: none;
+				-o-user-select: none;
+				user-select: none;
 			}
 		</style>
 	</head>

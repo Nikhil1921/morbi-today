@@ -7,7 +7,7 @@
 				<ul class="bxslider">
 					<?php foreach ($news_limit as $ne): ?>
 					<li>
-						<div class="news-post image-post">
+						<div class="news-post image-post" onclick="window.location.href = '<?= base_url('news/'.e_id($ne['id'])) ?>'">
 							<img src="<?= ($ne['image']); ?>" alt="">
 							<div class="hover-box">
 								<div class="inner-hover">
@@ -23,7 +23,7 @@
 				</ul>
 			</div>
 			<?php foreach ($news_limit as $i => $ne): ?>
-			<div class="news-post image-post default-size">
+			<div class="news-post image-post default-size" onclick="window.location.href = '<?= base_url('news/'.e_id($ne['id'])) ?>'">
 				<img src="<?= ($ne['image']); ?>" alt="">
 				<div class="hover-box">
 					<div class="inner-hover">
@@ -66,9 +66,11 @@
 							</div>
 							<?php endforeach ?>
 						</div>
-						<div class="pagination-box">
-							<?= $links ?>
-						</div>
+					</div>
+					<br>
+					<br>
+					<div class="pagination-box">
+						<?= $links ?>
 					</div>
 				</div>
 			</div>

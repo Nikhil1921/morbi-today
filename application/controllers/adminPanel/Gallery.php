@@ -100,8 +100,21 @@ class Gallery extends MY_Controller {
             $return = ['error' => true, 'message' => "Images not uploaded."];
 
         echo json_encode($return); die();
-        
     }
+
+    public function delete()
+	{
+		$id = d_id($this->input->post('id'));
+        if ($image = $this->main->get($this->table, 'image, thumb', ['id' => $id])) {
+            $del = $this->main->delete($this->table, ['id' => $id]);
+            if($del && is_file("assets/gallery/".$image['image'])) unlink("assets/gallery/".$image['image']);
+            if($del && is_file("assets/gallery/".$image['thumb'])) unlink("assets/gallery/".$image['thumb']);
+        }else{
+            $del = 0;
+        }
+
+		flashMsg($id, ucwords($this->title)." Deleted Successfully.", ucwords($this->title)." Not Deleted. Try again.", $this->redirect);
+	}
 
     private function set_resize_options($path)
     {
