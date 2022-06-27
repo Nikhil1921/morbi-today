@@ -23,35 +23,37 @@ class Home extends CI_Controller
         $this->load->model('blog_model');
         $this->load->library('pagination');
         $url = base_url();
+        
         if ($this->input->get('search'))
             $url = $url.'?search='.$this->input->get('search');
-            $config =   [
-                            "base_url"              => $url,
-                            "total_rows"            => $this->blog_model->get_blog_count(),
-                            "per_page"              => 10,
-                            "page_query_string"     => true,
-                            "enable_query_strings"  => true,
-                            "use_global_url_suffix" => true,
-                            "query_string_segment"  => 'page',
-                            "full_tag_open"         => '<ul class="pagination-list">',
-                            "full_tag_close"        => '</ul>',
-                            "first_tag_open"        => '<li>',
-                            "first_tag_close"       => '</li>',
-                            "last_tag_open"         => '<li>',
-                            "last_tag_close"        => '</li>',
-                            'next_link'             => 'Next',
-                            "next_tag_open"         => '<li>',
-                            "next_tag_close"        => '</li>',
-                            "prev_link"             => "Prev",
-                            "prev_tag_open"         => "<li>",
-                            "prev_tag_close"        => "</li>",
-                            "cur_tag_open"          => "<li><a class='active' href='javascript:void(0)'>",
-                            "cur_tag_close"         => "</a></li>",
-                            "num_tag_open"          => "<li>",
-                            "num_tag_close"         => "</li>",
-                            'first_link'            => "First",
-                            'last_link'             => "Last"
-                        ];
+
+        $config =   [
+                        "base_url"              => $url,
+                        "total_rows"            => $this->blog_model->get_blog_count(),
+                        "per_page"              => 10,
+                        "page_query_string"     => true,
+                        "enable_query_strings"  => true,
+                        "use_global_url_suffix" => true,
+                        "query_string_segment"  => 'page',
+                        "full_tag_open"         => '<ul class="pagination-list">',
+                        "full_tag_close"        => '</ul>',
+                        "first_tag_open"        => '<li>',
+                        "first_tag_close"       => '</li>',
+                        "last_tag_open"         => '<li>',
+                        "last_tag_close"        => '</li>',
+                        'next_link'             => 'Next',
+                        "next_tag_open"         => '<li>',
+                        "next_tag_close"        => '</li>',
+                        "prev_link"             => "Prev",
+                        "prev_tag_open"         => "<li>",
+                        "prev_tag_close"        => "</li>",
+                        "cur_tag_open"          => "<li><a class='active' href='javascript:void(0)'>",
+                        "cur_tag_close"         => "</a></li>",
+                        "num_tag_open"          => "<li>",
+                        "num_tag_close"         => "</li>",
+                        'first_link'            => "First",
+                        'last_link'             => "Last"
+                    ];
 
         $this->pagination->initialize($config);
         

@@ -207,6 +207,8 @@ class Home extends MY_Controller {
 
     public function backup()
     {
+        ini_set('max_execution_time', '0');
+        set_time_limit(3600);
         // Load the DB utility class
         $this->load->dbutil();
         

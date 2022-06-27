@@ -29,9 +29,9 @@ if($_SERVER['HTTP_HOST'] == 'localhost'){
     $db['default'] = array(
         'dsn'   => '',
         'hostname' => 'localhost',
-        'username' => 'labmajol_morbitoday',
-        'password' => 's,T)R&~]la??',
-        'database' => 'labmajol_morbitoday',
+        'username' => 'morbitod_ay',
+        'password' => 'Morbitoday@mt',
+        'database' => 'morbitod_ay',
         'dbdriver' => 'mysqli',
         'dbprefix' => '',
         'pconnect' => (ENVIRONMENT !== 'production'),

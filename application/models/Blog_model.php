@@ -88,12 +88,11 @@ class Blog_model extends CI_Model
         if ($this->input->get('search')):
             $this->db->group_start()
                      ->like('title', $this->input->get('search'))
-                     ->or_like('details', $this->input->get('search'))
-                     ->or_like('image', $this->input->get('search'))
+                     ->or_like('details', $this->input->get('search'))                     
                      ->or_like('created_at', $this->input->get('search'))
                      ->group_end();
         endif;
-        return $this->db->order_by('created_at', 'DESC')->get($this->table)->num_rows();
+        return $this->db->get($this->table)->num_rows();
     }
 
     public function get_authors($limit, $start, $id) {
